@@ -1,0 +1,36 @@
+#List all files in the working directory
+!ls
+
+# Open a file: file
+# mode = 'r' #for reading the file only
+# mode = 'w' #for writing/editing the file
+file = open('moby_dick.txt', mode='r')
+
+# Print it
+print(file.read())
+
+# Check whether file is closed
+print(file.closed) #it should come out as false because no command to close the file ran yet
+
+# Close file
+file.close() 
+
+
+# Check whether file is closed
+print(file.closed) #it should come out as true becacuse command to close has ran
+
+#Importing text files line by line
+#For large file, we may want to print only the first few lines. So, use readline() method
+# When a file called 'file' (or any other name we want) is open, you can print out the first line by executing file.readline() [i.e. filename.readline()]
+#If you execute the same command again, the second line will print, and so on.
+# Use together with context manager i.e. we bind a variable file by using a context manager construct:
+##with open('huck_finn.txt') as file:
+#While still within this construct, the variable file will be bound to open('huck_finn.txt'); thus, to print the file to the shell, all the code you need to execute is:
+## with open('huck_finn.txt') as file:
+## print(file.readline())
+
+# Read & print the first 3 lines
+with open('moby_dick.txt') as file:
+    print(file.readline())
+    print(file.readline())
+    print(file.readline())
